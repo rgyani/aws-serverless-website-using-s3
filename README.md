@@ -1,4 +1,4 @@
-#Scalability with traditional Web applications
+# Scalability with traditional Web applications
 
 Scalability is an inherent challenge with the traditional LAMP stack. 
 
