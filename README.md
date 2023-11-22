@@ -81,3 +81,19 @@ AWS RDS Proxy (available since November 2019), is a fully **managed database pro
 . This protects the database against over-subscription, without the memory and CPU overhead of opening a new database connection each time. Credentials for the database connection are securely stored in AWS Secrets Manager. They are accessed via an AWS Identity and Access Management (IAM) role. This enforces strong authentication requirements for database applications without a costly migration effort for the DB instances themselves.
 
 
+# Serving Paid Content, Documents, Media Stream over S3
+
+A lot of companies want to distribute content like Document, Media Streams over the internet, but restrict access to selected users, eg. paying customers in Netflix/Prime Videos like situation.
+
+To serve this content, we can use **CloudFront signed URLs or signed cookies**. It a then a good practise to restrict access to content directly eg AWS S3 url.
+
+You then develop your application either to create and distribute signed URLs to authenticated users or to send Set-Cookie headers that set signed cookies for authenticated users.
+
+It is then a good practise to **Restrict access to files in Amazon S3 buckets**
+This prevents someone from bypassing CloudFront and using the Amazon S3 URL to get content that you want to restrict access to.
+
+To require that users access your content through CloudFront URLs, you need to :
+* Give a CloudFront origin access control permission to read the files in the S3 bucket.
+* Create the origin access control and associate it with your CloudFront distribution.
+* Remove permission for anyone else to use Amazon S3 URLs to read the files.
+
