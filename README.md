@@ -58,7 +58,7 @@ While lambda, as of now, does not support PHP natively, we have PHP frameworks l
 
 ### API Gateway
 
-REST APIs and HTTP APIs are both RESTful API products. REST APIs support more features than HTTP APIs, while HTTP APIs are designed with minimal features so that they can be offered at a lower price. For more information, see Choosing between REST APIs and HTTP APIs.  
+REST APIs and HTTP APIs are both RESTful API products. REST APIs support more features than HTTP APIs, while HTTP APIs are designed with minimal features so that they can be offered at a lower price. For more information, see [Choosing between REST APIs and HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html)  
 You can use HTTP APIs to send requests to AWS Lambda functions or to any routable HTTP endpoint. For example, you can create an HTTP API that integrates with a Lambda function on the backend. When a client calls your API, API Gateway sends the request to the Lambda function and returns the function's response to the client.
 
 API gateway also provides an API endpoint that we can use to access our backend APIs. However, it would be weird to use the API gateway domain from within our static webpages (hosted on s3) to route requests.  
